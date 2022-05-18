@@ -1,14 +1,17 @@
 package com.help.ukraine.testkmm.data.entities
 
+import io.realm.RealmObject
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class RocketEntity(
+class RocketEntity : RealmObject {
     @SerialName("rocket_id")
-    val id: String,
+    var id: String = ""
+
     @SerialName("rocket_name")
-    val name: String,
+    var name: String = ""
+
     @SerialName("rocket_type")
-    val type: String
-)
+    var type: String = ""
+}

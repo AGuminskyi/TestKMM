@@ -1,24 +1,32 @@
 package com.help.ukraine.testkmm.data.entities
 
+import io.realm.RealmObject
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class RocketLaunchEntity(
+class RocketLaunchEntity : RealmObject {
     @SerialName("flight_number")
-    val flightNumber: Int,
+    var flightNumber: Int = 0
+
     @SerialName("mission_name")
-    val missionName: String,
+    var missionName: String = ""
+
     @SerialName("launch_year")
-    val launchYear: Int,
+    var launchYear: Int = 0
+
     @SerialName("launch_date_utc")
-    val launchDateUTC: String,
+    var launchDateUTC: String = ""
+
     @SerialName("rocket")
-    val rocketEntity: RocketEntity,
+    var rocketEntity: RocketEntity? = RocketEntity()
+
     @SerialName("details")
-    val details: String?,
+    var details: String? = ""
+
     @SerialName("launch_success")
-    val launchSuccess: Boolean?,
+    var launchSuccess: Boolean? = false
+
     @SerialName("links")
-    val linksEntity: LinksEntity
-)
+    var linksEntity: LinksEntity? = LinksEntity()
+}

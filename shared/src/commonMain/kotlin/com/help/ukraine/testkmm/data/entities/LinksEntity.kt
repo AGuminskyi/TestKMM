@@ -1,12 +1,14 @@
 package com.help.ukraine.testkmm.data.entities
 
+import io.realm.RealmObject
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class LinksEntity(
+class LinksEntity : RealmObject {
     @SerialName("mission_patch")
-    val missionPatchUrl: String?,
+    var missionPatchUrl: String? = ""
+
     @SerialName("article_link")
-    val articleUrl: String?,
-)
+    var articleUrl: String? = ""
+}

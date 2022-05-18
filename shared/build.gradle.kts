@@ -3,6 +3,7 @@ plugins {
     kotlin("plugin.serialization")
     id("com.android.library")
     id("com.squareup.sqldelight")
+    id("io.realm.kotlin") version "0.11.1"
 }
 
 kotlin {
@@ -31,6 +32,7 @@ kotlin {
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
                 implementation("com.squareup.sqldelight:runtime:$sqlDelightVersion")
+                api("io.realm.kotlin:library-base:0.11.1")
             }
         }
         val commonTest by getting {
